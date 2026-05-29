@@ -22,6 +22,12 @@ pushd examples
 %XELATEX% "-output-directory=../build" minimal.tex || (popd & exit /b 1)
 popd
 
+echo Building examples/blank-template.tex...
+pushd examples
+%XELATEX% "-output-directory=../build" blank-template.tex || (popd & exit /b 1)
+%XELATEX% "-output-directory=../build" blank-template.tex || (popd & exit /b 1)
+popd
+
 echo Building tests/math-response-test.tex...
 pushd tests
 %XELATEX% "-output-directory=../build" math-response-test.tex || (popd & exit /b 1)

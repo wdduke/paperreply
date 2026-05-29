@@ -1,7 +1,16 @@
 % !TeX encoding = UTF-8
-We thank the referee for the careful reading of our manuscript and for the constructive suggestions. The comments helped us clarify the purpose of the proposed calibration method, improve the notation, and make the experimental procedure easier to reproduce. We respond to each point below.
+We thank the referee for the careful reading of our manuscript and for the constructive suggestions. The comments helped us clarify the purpose of the proposed calibration method, improve the notation, and make the experimental procedure easier to reproduce.
 
-\section*{Comment 1: Motivation and scope}
+\begin{revisionsummary}
+\item Clarified when field calibration is preferable to standard laboratory recalibration.
+\item Defined the drift correction term before presenting the first equation.
+\item Expanded the field protocol so that the experiment can be reproduced more easily.
+\item Added a limitation about abrupt sensor failure and nonlinear drift.
+\end{revisionsummary}
+
+\reviewersection{Reviewer 1}
+
+\begin{replypoint}[Revised]{Motivation and scope}
 \begin{refereecomment}
 \textbf{Summary.} The manuscript proposes a lightweight method for correcting sensor drift during field experiments. The approach is potentially useful, but the Introduction should explain more clearly when the proposed method is preferable to standard laboratory recalibration.
 \end{refereecomment}
@@ -10,9 +19,12 @@ We thank the referee for the careful reading of our manuscript and for the const
 We thank the referee for this helpful summary. We agree that the original Introduction did not clearly separate field calibration from standard laboratory recalibration.
 
 In the revised manuscript, we have added a paragraph at the end of the Introduction explaining that the proposed method is intended for settings where sensors cannot be frequently removed from the field. We now state that laboratory recalibration remains the preferred option when equipment can be transported and measured under controlled conditions. Our method is designed for interim correction between full recalibration events.
-\end{authorreply}
 
-\section*{Comment 2: Definition of the correction term}
+\revisionloc{Introduction, final paragraph}
+\end{authorreply}
+\end{replypoint}
+
+\begin{replypoint}[Revised]{Definition of the correction term}
 \begin{refereecomment}
 \textbf{Major point 1.} Please define the correction term before using it in Section 3. The current notation is introduced only after the first equation.
 \end{refereecomment}
@@ -29,9 +41,12 @@ We agree with the referee. We have revised Section 3 so that all notation is int
 \end{replyformula}
 
 Here, \(y_t\) is the raw sensor reading, \(y_t^{\mathrm{corr}}\) is the corrected reading, \(\delta_t\) is the estimated drift, \(t_0\) is the baseline measurement time, and \(\alpha\) is the estimated drift rate. We believe this change makes the method easier to follow.
-\end{authorreply}
 
-\section*{Comment 3: Reproducibility of the field protocol}
+\revisionloc{Section 3, first paragraph and Equation 1}
+\end{authorreply}
+\end{replypoint}
+
+\begin{replypoint}[Revised]{Reproducibility of the field protocol}
 \begin{refereecomment}
 \textbf{Major point 2.} The field protocol should include enough detail for readers to repeat the experiment, especially the number of reference measurements and the timing of the baseline measurement.
 \end{refereecomment}
@@ -40,25 +55,34 @@ Here, \(y_t\) is the raw sensor reading, \(y_t^{\mathrm{corr}}\) is the correcte
 Thank you for pointing this out. We have expanded the protocol description in Section 4. The revised version now specifies that each sensor was measured against a reference instrument three times at the start of the experiment and once at the end of each field day. We also added the timing of the baseline measurement and explained how the average reference difference was used to estimate drift.
 
 To improve readability, we converted the protocol into a short numbered list. This should make the experimental procedure easier to reproduce.
-\end{authorreply}
 
-\section*{Comment 4: Limitations}
+\revisionloc{Section 4, Field protocol}
+\end{authorreply}
+\end{replypoint}
+
+\begin{replypoint}[Revised]{Limitations}
 \begin{refereecomment}
 \textbf{Minor point 1.} The manuscript should mention that the proposed linear drift model may not be appropriate for sensors with abrupt failure or nonlinear aging.
 \end{refereecomment}
 
 \begin{authorreply}
 We agree. We have added this limitation to the Discussion section. The revised manuscript now states that the linear model is appropriate only when drift changes gradually over the measurement period. We also note that abrupt sensor failure, environmental contamination, or nonlinear aging would require a different diagnostic procedure.
-\end{authorreply}
 
-\section*{Comment 5: Wording}
+\revisionloc{Discussion, Limitations paragraph}
+\end{authorreply}
+\end{replypoint}
+
+\begin{replypoint}[Revised]{Wording}
 \begin{refereecomment}
 \textbf{Minor point 2.} Please replace the phrase ``nearly perfect correction'' with more cautious wording.
 \end{refereecomment}
 
 \begin{authorreply}
 Thank you for this suggestion. We have replaced ``nearly perfect correction'' with ``substantial reduction in average measurement error.'' This wording is more precise and better matches the evidence reported in the Results section.
+
+\revisionloc{Results, final paragraph}
 \end{authorreply}
+\end{replypoint}
 
 \vspace{1em}
 We again thank the referee for the constructive review. The revised manuscript is clearer, more reproducible, and more careful in describing the intended scope of the method.

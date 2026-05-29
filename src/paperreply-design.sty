@@ -12,6 +12,10 @@
 \definecolor{paperreplysoftgray}{RGB}{247,247,247}
 \definecolor{paperreplymathback}{RGB}{250,252,255}
 \definecolor{paperreplymathframe}{RGB}{74,111,165}
+\definecolor{paperreplysoftgreen}{RGB}{238,248,242}
+\definecolor{paperreplygreen}{RGB}{35,118,82}
+\definecolor{paperreplysoftyellow}{RGB}{255,249,232}
+\definecolor{paperreplyyellow}{RGB}{152,105,22}
 
 \colorlet{jfmblue}{paperreplyblue}
 \colorlet{softblue}{paperreplysoftblue}
@@ -69,4 +73,42 @@
   title=\textbf{#1},
   coltitle=white,
   colbacktitle=paperreplymathframe
+}
+
+\newtcolorbox{paperreplysummarybox}{
+  paperreply/base,
+  colback=paperreplysoftgreen,
+  colframe=paperreplygreen,
+  boxrule=0.5pt,
+  title=\textbf{Summary of revisions},
+  coltitle=white,
+  colbacktitle=paperreplygreen
+}
+
+\newtcbox{\paperreplystatusbox}{
+  on line,
+  colback=paperreplyblue!8,
+  colframe=paperreplyblue!70!black,
+  coltext=paperreplyblue!50!black,
+  boxrule=0.4pt,
+  arc=1.2mm,
+  left=1.5mm,
+  right=1.5mm,
+  top=0.35mm,
+  bottom=0.35mm,
+  boxsep=0pt
+}
+
+\newtcbox{\paperreplylocbox}{
+  on line,
+  colback=paperreplysoftyellow,
+  colframe=paperreplyyellow,
+  coltext=paperreplyyellow!60!black,
+  boxrule=0.4pt,
+  arc=1.2mm,
+  left=1.5mm,
+  right=1.5mm,
+  top=0.35mm,
+  bottom=0.35mm,
+  boxsep=0pt
 }

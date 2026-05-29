@@ -24,6 +24,7 @@
 \newcommand{\paperreply@paperTitle}{}
 \newcommand{\paperreply@manuscriptID}{}
 \newcommand{\paperreply@authors}{}
+\newif\ifpaperreply@anonymous
 
 \pgfkeys{
   /paperreply/.is family,
@@ -31,7 +32,9 @@
   response-title/.store in=\paperreply@responseTitle,
   paper-title/.store in=\paperreply@paperTitle,
   manuscript-id/.store in=\paperreply@manuscriptID,
-  authors/.store in=\paperreply@authors
+  authors/.store in=\paperreply@authors,
+  anonymous/.is if=paperreply@anonymous,
+  anonymous/.default=true
 }
 
 \NewDocumentCommand{\PaperReplySetup}{m}{%
@@ -43,11 +46,50 @@
     {\Large\bfseries \paperreply@responseTitle}\\[4pt]
     {\large \textit{\paperreply@paperTitle}}\\[2pt]
     \textbf{Manuscript ID:} \paperreply@manuscriptID\\
-    \textbf{Authors:} \paperreply@authors
+    \ifpaperreply@anonymous
+      \textbf{Authors:} Anonymous
+    \else
+      \textbf{Authors:} \paperreply@authors
+    \fi
   \end{center}
   \vspace{0.5em}
   \hrule
   \vspace{1em}
+}
+
+\newcounter{paperreplypoint}
+\NewDocumentCommand{\reviewersection}{m}{%
+  \section*{#1}%
+  \setcounter{paperreplypoint}{0}%
+}
+
+\NewDocumentCommand{\replystatus}{m}{%
+  \paperreplystatusbox{\textbf{#1}}%
+}
+
+\NewDocumentCommand{\revisionloc}{m}{%
+  \par\smallskip
+  \paperreplylocbox{\textbf{Revision location:} #1}%
+  \par\smallskip
+}
+
+\NewDocumentEnvironment{replypoint}{O{} m}{%
+  \refstepcounter{paperreplypoint}%
+  \section*{Comment \thepaperreplypoint: #2}%
+  \begingroup
+  \edef\paperreply@status{#1}%
+  \ifx\paperreply@status\@empty\else
+    \replystatus{#1}\par\smallskip
+  \fi
+  \endgroup
+}{}
+
+\NewDocumentEnvironment{revisionsummary}{}{%
+  \begin{paperreplysummarybox}
+  \begin{itemize}
+}{%
+  \end{itemize}
+  \end{paperreplysummarybox}
 }
 
 \NewDocumentEnvironment{refereecomment}{}{\begin{commentbox}}{\end{commentbox}}

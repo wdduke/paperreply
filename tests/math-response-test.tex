@@ -10,13 +10,16 @@
   response-title = {Response to Mathematical Comment},
   paper-title = {A Minimal Formula Test for Paper Replies},
   manuscript-id = {TEST-2026-0001},
-  authors = {The Authors}
+  authors = {The Authors},
+  anonymous = true
 }
 
 \begin{document}
 \PaperReplyMakeTitle
 
-\section*{Comment 1: Definition of the score}
+\reviewersection{Reviewer 1}
+
+\begin{replypoint}[Revised]{Definition of the score}
 \begin{commentbox}
 Please define the score difference and report the notation consistently.
 \end{commentbox}
@@ -33,6 +36,8 @@ We now define the group difference before reporting the numerical result.
 \]
 \end{replyformula}
 The notation distinguishes the structured note-taking group from the ordinary linear note group.
+\revisionloc{Methods, notation paragraph}
 \end{replybox}
+\end{replypoint}
 
 \end{document}

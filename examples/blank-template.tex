@@ -1,0 +1,38 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX root = blank-template.tex
+\makeatletter
+\def\input@path{{../}{../src/}}
+\makeatother
+\documentclass{paperreply}
+
+\PaperReplySetup{
+  response-title = {Response to Referee 1},
+  paper-title = {Your Manuscript Title},
+  manuscript-id = {JOURNAL-2026-0000},
+  authors = {First Author and Second Author}
+}
+
+\begin{document}
+\PaperReplyMakeTitle
+
+\begin{revisionsummary}
+\item Briefly summarize the most important revision.
+\item Briefly summarize another important revision.
+\end{revisionsummary}
+
+\reviewersection{Reviewer 1}
+
+\begin{replypoint}[Revised]{Short title of the comment}
+\begin{refereecomment}
+Paste the referee's comment here.
+\end{refereecomment}
+
+\begin{authorreply}
+Write your response here. State what was changed, why it was changed, and where the revision can be found.
+
+\revisionloc{Section X, paragraph Y}
+\end{authorreply}
+\end{replypoint}
+
+\end{document}
