@@ -1,0 +1,38 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX root = math-response-test.tex
+\makeatletter
+\def\input@path{{../src/}{../}}
+\makeatother
+\documentclass{paperreply}
+
+\PaperReplySetup{
+  response-title = {Response to Mathematical Comment},
+  paper-title = {A Minimal Formula Test for Paper Replies},
+  manuscript-id = {TEST-2026-0001},
+  authors = {The Authors}
+}
+
+\begin{document}
+\PaperReplyMakeTitle
+
+\section*{Comment 1: Definition of the score}
+\begin{commentbox}
+Please define the score difference and report the notation consistently.
+\end{commentbox}
+
+\begin{replybox}
+We now define the group difference before reporting the numerical result.
+\begin{replyformula}[Score difference]
+\[
+  \Delta
+  = \Expected[S_{\mathrm{structured}}]
+    - \Expected[S_{\mathrm{linear}}],
+  \qquad
+  \Variance(S)=\Expected\left[(S-\Expected[S])^2\right].
+\]
+\end{replyformula}
+The notation distinguishes the structured note-taking group from the ordinary linear note group.
+\end{replybox}
+
+\end{document}

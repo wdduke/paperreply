@@ -1,0 +1,72 @@
+% !TeX encoding = UTF-8
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{paperreply-design}[2026/05/29 Design system for paper reply letters]
+
+\RequirePackage{xcolor}
+\RequirePackage{enumitem}
+\RequirePackage{hyperref}
+\RequirePackage[most]{tcolorbox}
+
+\definecolor{paperreplyblue}{RGB}{0,72,128}
+\definecolor{paperreplysoftblue}{RGB}{238,246,252}
+\definecolor{paperreplysoftgray}{RGB}{247,247,247}
+\definecolor{paperreplymathback}{RGB}{250,252,255}
+\definecolor{paperreplymathframe}{RGB}{74,111,165}
+
+\colorlet{jfmblue}{paperreplyblue}
+\colorlet{softblue}{paperreplysoftblue}
+\colorlet{softgray}{paperreplysoftgray}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=paperreplyblue,
+  citecolor=paperreplyblue,
+  urlcolor=paperreplyblue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.6em,itemsep=2pt,topsep=3pt}
+
+\tcbset{
+  paperreply/base/.style={
+    enhanced,
+    breakable,
+    boxrule=0.5pt,
+    arc=2mm,
+    left=2mm,
+    right=2mm,
+    top=1mm,
+    bottom=1mm
+  }
+}
+
+\newtcolorbox{commentbox}{
+  paperreply/base,
+  colback=paperreplysoftgray,
+  colframe=black!35,
+  boxrule=0.4pt,
+  title=\textbf{Referee's comment},
+  coltitle=black,
+  colbacktitle=black!8
+}
+
+\newtcolorbox{replybox}{
+  paperreply/base,
+  colback=paperreplysoftblue,
+  colframe=paperreplyblue!70!black,
+  boxrule=0.6pt,
+  title=\textbf{Authors' reply},
+  coltitle=white,
+  colbacktitle=paperreplyblue
+}
+
+\newtcolorbox{paperreplymathbox}[1][Formula]{
+  paperreply/base,
+  colback=paperreplymathback,
+  colframe=paperreplymathframe,
+  boxrule=0.5pt,
+  title=\textbf{#1},
+  coltitle=white,
+  colbacktitle=paperreplymathframe
+}

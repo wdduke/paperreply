@@ -1,0 +1,24 @@
+paperreply notice
+=================
+
+This repository contains a refactored LaTeX template for writing replies to
+journal referees.
+
+Original third-party source
+---------------------------
+
+The legacy example was identified by the project author as being derived from
+the single-file code and example content at:
+
+https://mp.weixin.qq.com/s/acWCLZxFKYH1jrYqK4uD9Q
+
+The original code, article, and example materials remain the property of their
+respective author(s) or publisher(s). They are included here only as a legacy
+case study for refactoring and template-organization practice.
+
+Original project materials
+--------------------------
+
+The class/style files, scripts, documentation, and newly written example
+content are original materials for this repository unless otherwise noted.
+See LICENSE for the terms that apply to those original materials.

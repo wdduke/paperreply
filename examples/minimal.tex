@@ -1,0 +1,36 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX root = minimal.tex
+\makeatletter
+\def\input@path{{../src/}{../}}
+\makeatother
+\documentclass{paperreply}
+
+\PaperReplySetup{
+  response-title = {Response to Referee 2},
+  paper-title = {Your Manuscript Title},
+  manuscript-id = {JOURNAL-2026-0000},
+  authors = {First Author and Second Author}
+}
+
+\begin{document}
+\PaperReplyMakeTitle
+
+\section*{Comment 1: Clarify the main result}
+\begin{refereecomment}
+The manuscript should define the main performance measure before reporting the results.
+\end{refereecomment}
+
+\begin{authorreply}
+We thank the referee for this suggestion. We have revised Section 2 to define the measure before presenting the numerical results.
+
+\begin{replyformula}[Performance measure]
+\[
+  E = \frac{1}{n}\sum_{i=1}^{n}\abs{y_i-\hat{y}_i}.
+\]
+\end{replyformula}
+
+This definition now appears before the first comparison table.
+\end{authorreply}
+
+\end{document}
